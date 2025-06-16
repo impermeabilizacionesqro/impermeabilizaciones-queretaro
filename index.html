@@ -6,6 +6,66 @@
   <title>Impermeabilizaciones Querétaro</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .galeria {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .servicio {
+    width: 100%;
+  }
+
+  .whatsapp-float img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+    .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
     #galeria h2 {
   text-align: center;
   font-size: 2rem;
@@ -240,6 +300,9 @@
   </footer>
   <!-- Lightbox JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/524427195894" class="whatsapp-float" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+</a>
 </body>
 </html>
