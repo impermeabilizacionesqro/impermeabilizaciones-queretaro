@@ -1,95 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impermeabilizaciones Querétaro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: white;
+    :root {
+      --amarillo: #f1c40f;
+      --negro: #111;
+      --gris: #f7f7f7;
     }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--gris);
+      color: var(--negro);
+    }
+
     header {
-      background-color: #ffc107;
-      color: black;
-      padding: 20px;
+      background-color: var(--negro);
+      color: white;
+      padding: 2rem;
       text-align: center;
     }
-    h1 {
-      margin: 0;
+
+    header h1 {
+      color: var(--amarillo);
+      font-size: 2.5rem;
     }
+
     nav {
-      background-color: #333;
       display: flex;
       justify-content: center;
-      padding: 10px;
+      gap: 2rem;
+      background-color: var(--amarillo);
+      padding: 1rem 0;
     }
+
     nav a {
-      color: white;
       text-decoration: none;
-      margin: 0 15px;
+      color: var(--negro);
       font-weight: bold;
     }
+
     section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
+
     .servicios {
-      background-color: #2c2c2c;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
+
+    .servicio {
+      background: white;
+      border: 1px solid #ddd;
+      border-left: 5px solid var(--amarillo);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
     footer {
-      background-color: #111;
-      color: #aaa;
+      background-color: var(--negro);
+      color: white;
       text-align: center;
-      padding: 15px;
-      font-size: 14px;
+      padding: 2rem 1rem;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Impermeabilizaciones Querétaro</h1>
-    <p>Protegiendo tu hogar con calidad y confianza</p>
+    <p>Soluciones profesionales en impermeabilización para tu hogar o negocio</p>
   </header>
 
   <nav>
+    <a href="#inicio">Inicio</a>
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
+  <section id="inicio">
+    <h2>Bienvenido</h2>
+    <p>Nos especializamos en impermeabilizaciones profesionales en Querétaro. Contamos con personal capacitado, materiales de alta calidad y garantía escrita en todos nuestros servicios.</p>
+  </section>
+
   <section id="servicios">
     <h2>Servicios</h2>
     <div class="servicios">
-      <h3>Impermeabilización de techos</h3>
-      <p>Usamos materiales de alta calidad que garantizan durabilidad y resistencia al clima.</p>
-    </div>
-    <div class="servicios">
-      <h3>Mantenimiento y reparación</h3>
-      <p>Revisamos y reparamos filtraciones, grietas y desgaste en cubiertas ya existentes.</p>
-    </div>
-    <div class="servicios">
-      <h3>Atención a empresas y particulares</h3>
-      <p>Ofrecemos soluciones a hogares, negocios, naves industriales y más.</p>
+      <div class="servicio">
+        <h3>Impermeabilización de techos</h3>
+        <p>Protege tu patrimonio con sistemas de impermeabilización acrílica, prefabricada o de poliuretano.</p>
+      </div>
+      <div class="servicio">
+        <h3>Mantenimiento preventivo</h3>
+        <p>Evita filtraciones y humedad con un servicio profesional de revisión y mantenimiento.</p>
+      </div>
+      <div class="servicio">
+        <h3>Atención residencial y comercial</h3>
+        <p>Atendemos casas, departamentos, oficinas y naves industriales con soluciones a medida.</p>
+      </div>
     </div>
   </section>
 
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>Estamos en Querétaro y atendemos toda la zona con rapidez y profesionalismo.</p>
-    <p><strong>WhatsApp:</strong> 442-123-4567</p>
-    <p><strong>Email:</strong> contacto@impermeabilizacionesqro.com</p>
+    <p>Contáctanos vía WhatsApp al <strong>442-123-4567</strong> o escríbenos a <strong>correo@impermeabilizacionesqro.com</strong></p>
   </section>
 
   <footer>
-    © 2025 Impermeabilizaciones Querétaro · Todos los derechos reservados
+    <p>&copy; 2025 Impermeabilizaciones Querétaro. Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>
