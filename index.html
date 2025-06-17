@@ -75,14 +75,14 @@ button.prev, button.next {
 button.prev { left: 10px; }
 button.next { right: 10px; }
 
-    
-  .titulo-linea {
-  white-space: nowrap;        /* Evita que la palabra se divida */
-  overflow: hidden;           /* Oculta el texto que se salga */
-  text-overflow: ellipsis;    /* Muestra "..." si es muy largo */
-  max-width: 100%;            /* Ajusta al ancho del contenedor */
+    .titulo-linea {
+  display: inline-block;      /* Para que tome solo el ancho necesario */
+  max-width: 100%;            /* No más ancho que el contenedor padre */
+  overflow-wrap: break-word;  /* Permite partir palabra solo si es necesario */
+  word-break: break-word;     /* Forzar corte si necesario (soporte moderno) */
+  hyphens: auto;              /* Guiones automáticos para partir palabra */
+  white-space: normal;        /* Permite que el texto haga salto de línea */
 }
-
 
 
     /* Estilos responsivos para pantallas pequeñas */
