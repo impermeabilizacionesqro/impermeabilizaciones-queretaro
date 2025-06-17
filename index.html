@@ -76,10 +76,12 @@ button.prev { left: 10px; }
 button.next { right: 10px; }
 
     
-    .titulo-linea {
+  .titulo-linea {
   display: inline-block;
-  word-break: keep-all;
+  word-break: break-word; /* o word-break: break-all; */
+  overflow-wrap: break-word;
 }
+
 
     /* Estilos responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -183,7 +185,7 @@ button.next { right: 10px; }
     body {
       background-color: var(--gris);
       color: var(--negro);
-      <!-- Lightbox JS -->
+  
 
 
     }
@@ -444,9 +446,9 @@ form button:hover {
     </div>
     
   </section>
-    <h2>Contacto</h2>
   <section id="contacto">
-    <form id="contact-from" action="https://formspree.io/f/myzjpybw" method="POST" target="_blank">
+    <h2>Contacto</h2>
+    <form id="contact-form" action="https://formspree.io/f/myzjpybw" method="POST" target="_blank">
       <div id="error-box" style="display:none;"></div>
   <label for="nombre">Nombre:</label><br>
   <input type="text" id="nombre" name="nombre" required><br><br>
