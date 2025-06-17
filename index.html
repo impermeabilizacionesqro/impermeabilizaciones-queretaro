@@ -265,6 +265,57 @@ button.next { right: 10px; }
     padding: 0 10px;
   }
 }
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--negro);
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--amarillo);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #d4b000;
+  outline: none;
+}
+
+form button {
+  background-color: var(--amarillo);
+  color: var(--negro);
+  border: none;
+  padding: 12px 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #d4b000;
+}
 
   </style>
   <!-- Lightbox CSS -->
@@ -370,6 +421,19 @@ button.next { right: 10px; }
   </section>
 
   <section id="contacto">
+    <form action="https://formspree.io/f/mgedrjld" method="POST" target="_blank">
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" id="nombre" name="nombre" required><br><br>
+
+  <label for="email">Correo electrónico:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="mensaje">Mensaje:</label><br>
+  <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+  <button type="submit">Enviar</button>
+</form>
+
     <h2>Contacto</h2>
     <p>Contáctanos vía WhatsApp al <strong>442-719-5894</strong> o escríbenos a <strong>correo@impermeabilizacionesqro.com</strong></p>
     <a class="btn" href="https://wa.me/524421234567" target="_blank">Enviar WhatsApp</a>
