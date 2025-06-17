@@ -342,7 +342,7 @@ form button:hover {
 }
 
   </style>
-  <!-- Lightbox CSS -->
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
 </head>
@@ -444,8 +444,9 @@ form button:hover {
     </div>
     
   </section>
+    <h2>Contacto</h2>
   <section id="contacto">
-    <form action="https://formspree.io/f/myzjpybw" method="POST" target="_blank">
+    <form id="contact-from" action="https://formspree.io/f/myzjpybw" method="POST" target="_blank">
       <div id="error-box" style="display:none;"></div>
   <label for="nombre">Nombre:</label><br>
   <input type="text" id="nombre" name="nombre" required><br><br>
@@ -459,7 +460,7 @@ form button:hover {
   <button type="submit">Enviar</button>
 </form>
 
-    <h2>Contacto</h2>
+  
     <p>Contáctanos vía WhatsApp al <strong>442-719-5894</strong> o escríbenos a <strong>correo@impermeabilizacionesqro.com</strong></p>
     <a class="btn" href="https://wa.me/524421234567" target="_blank">Enviar WhatsApp</a>
   </section>
@@ -467,7 +468,7 @@ form button:hover {
   <footer>
     <p>&copy; 2025 Impermeabilizaciones Querétaro. Todos los derechos reservados.</p>
   </footer>
-  <!-- Lightbox JS -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <!-- Botón flotante de WhatsApp -->
 <a href="https://wa.me/524427195894" class="whatsapp-float" target="_blank">
@@ -499,9 +500,9 @@ showSlide(index);
 
     let errors = [];
 
-    const name = document.getElementById('name').value.trim();
+    const name = document.getElementById('nombre').value.trim();
     const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const message = document.getElementById('mensaje').value.trim();
 
     if (name.length < 3) {
       errors.push("El nombre debe tener al menos 3 caracteres.");
