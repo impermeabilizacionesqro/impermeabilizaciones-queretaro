@@ -418,8 +418,8 @@ form button:hover {
         <p>Usamos marcas reconocidas y materiales de alto rendimiento.</p>
       </div>
     </div>
+    
   </section>
-
   <section id="contacto">
     <form action="https://formspree.io/f/myzjpybw" method="POST" target="_blank">
   <label for="nombre">Nombre:</label><br>
@@ -463,6 +463,39 @@ document.querySelector('.next').addEventListener('click', () => showSlide(index 
 
 showSlide(index);
 </script>
+  <script>
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function(event) {
+    let errors = [];
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validar nombre
+    if (name.length < 3) {
+      errors.push("Por favor, ingresa un nombre válido de al menos 3 caracteres.");
+    }
+
+    // Validar email con expresión regular simple
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      errors.push("Por favor, ingresa un correo electrónico válido.");
+    }
+
+    // Validar mensaje
+    if (message.length < 10) {
+      errors.push("Por favor, escribe un mensaje más detallado (al menos 10 caracteres).");
+    }
+
+    if (errors.length > 0) {
+      event.preventDefault(); // Evitar envío si hay errores
+      alert(errors.join("\n"));
+    }
+  });
+</script>
+
 
 </body>
 </html>
