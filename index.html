@@ -77,10 +77,12 @@ button.next { right: 10px; }
 
     
   .titulo-linea {
-  display: inline-block;
-  word-break: break-word; /* o word-break: break-all; */
-  overflow-wrap: break-word;
+  white-space: nowrap;        /* Evita que la palabra se divida */
+  overflow: hidden;           /* Oculta el texto que se salga */
+  text-overflow: ellipsis;    /* Muestra "..." si es muy largo */
+  max-width: 100%;            /* Ajusta al ancho del contenedor */
 }
+
 
 
     /* Estilos responsivos para pantallas pequeñas */
