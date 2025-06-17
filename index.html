@@ -6,6 +6,30 @@
   <title>Impermeabilizaciones Querétaro</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+#error-box {
+  background-color: #ffe6e6;
+  color: #b30000;
+  border: 1px solid #ff9999;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#error-box p {
+  margin: 0 0 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#error-box p::before {
+  content: "⚠️";
+  display: inline-block;
+}
+
+    
 .carousel-container {
   position: relative;
   width: 100%;
@@ -422,6 +446,7 @@ form button:hover {
   </section>
   <section id="contacto">
     <form action="https://formspree.io/f/myzjpybw" method="POST" target="_blank">
+      <div id="error-box" style="display:none;"></div>
   <label for="nombre">Nombre:</label><br>
   <input type="text" id="nombre" name="nombre" required><br><br>
 
@@ -463,38 +488,43 @@ document.querySelector('.next').addEventListener('click', () => showSlide(index 
 
 showSlide(index);
 </script>
-  <script>
+
+<script>
   const form = document.getElementById('contact-form');
+  const errorBox = document.getElementById('error-box');
 
   form.addEventListener('submit', function(event) {
+    errorBox.innerHTML = ""; // Limpia errores anteriores
+    errorBox.style.display = "none";
+
     let errors = [];
 
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
-    // Validar nombre
     if (name.length < 3) {
-      errors.push("Por favor, ingresa un nombre válido de al menos 3 caracteres.");
+      errors.push("El nombre debe tener al menos 3 caracteres.");
     }
 
-    // Validar email con expresión regular simple
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      errors.push("Por favor, ingresa un correo electrónico válido.");
+      errors.push("El correo electrónico no es válido.");
     }
 
-    // Validar mensaje
     if (message.length < 10) {
-      errors.push("Por favor, escribe un mensaje más detallado (al menos 10 caracteres).");
+      errors.push("El mensaje debe tener al menos 10 caracteres.");
     }
 
     if (errors.length > 0) {
-      event.preventDefault(); // Evitar envío si hay errores
-      alert(errors.join("\n"));
+      event.preventDefault();
+      errorBox.innerHTML = errors.map(e => `<p>${e}</p>`).join('');
+      errorBox.style.display = "block";
     }
   });
 </script>
+
+
 
 
 </body>
